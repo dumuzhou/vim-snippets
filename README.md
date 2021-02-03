@@ -9,7 +9,7 @@ other improvements already.
 
 ## Contents
 
-- `snippets/*`: snippets using snipMate format
+- `snippets/*`: snippets using snipMate format test
 - `UltiSnips/*`: snippets using UltiSnips format
 
 ## Snippet engines supporting vim-snippets

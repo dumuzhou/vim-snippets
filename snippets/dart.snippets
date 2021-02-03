@@ -81,3 +81,394 @@ snippet tryf
 	} catch (${1:Exception e}) {
 	} finally {
 	}
+snippet struct
+class TMPStruct {
+  num id;
+  num n1;
+  num n2;
+  num n3;
+  num n4;
+  num n5;
+  String s1;
+  String s2;
+  String s3;
+  String s4;
+  String s5;
+  List<TMPItem> list = [];
+
+  TMPStruct({
+    this.id,
+    this.n1,
+    this.n2,
+    this.n3,
+    this.n4,
+    this.n5,
+    this.s1,
+    this.s2,
+    this.s3,
+    this.s4,
+    this.s5,
+    this.list,
+  });
+  factory TMPStruct.fromJson(Map<String, dynamic> personJson) {
+    List<TMPItem> list = [];
+    if (personJson["list"] != null) {
+      for (var item in personJson["list"]) {
+        list.add(TMPItem.fromJson(item));
+      }
+    }
+
+    return TMPStruct(
+      id: personJson["id"],
+      n1: personJson["n1"],
+      n2: personJson["n2"],
+      n3: personJson["n3"],
+      n4: personJson["n4"],
+      n5: personJson["n5"],
+      s1: personJson["s1"],
+      s2: personJson["s2"],
+      s3: personJson["s3"],
+      s4: personJson["s4"],
+      s5: personJson["s5"],
+      list: list,
+    );
+  }
+  Map<String, dynamic> toJson() {
+    List<Map<String, dynamic>> listTMP = [];
+    if (list != null) {
+      for (var item in list) {
+        listTMP.add(item.toJson());
+      }
+    }
+    return {
+      "id": id,
+      "n1": n1,
+      "n2": n2,
+      "n3": n3,
+      "n4": n4,
+      "n5": n5,
+      "s1": s1,
+      "s2": s2,
+      "s3": s3,
+      "s4": s4,
+      "s5": s5,
+      "list": listTMP
+    };
+  }
+}
+
+class TMPItem {
+  num id;
+  num n1;
+  num n2;
+  num n3;
+  num n4;
+  num n5;
+  String s1;
+  String s2;
+  String s3;
+  String s4;
+  String s5;
+
+  TMPItem({
+    this.id,
+    this.n1,
+    this.n2,
+    this.n3,
+    this.n4,
+    this.n5,
+    this.s1,
+    this.s2,
+    this.s3,
+    this.s4,
+    this.s5,
+  });
+  factory TMPItem.fromJson(Map<String, dynamic> personJson) {
+    return TMPItem(
+      id: personJson["id"],
+      n1: personJson["n1"],
+      n2: personJson["n2"],
+      n3: personJson["n3"],
+      n4: personJson["n4"],
+      n5: personJson["n5"],
+      s1: personJson["s1"],
+      s2: personJson["s2"],
+      s3: personJson["s3"],
+      s4: personJson["s4"],
+      s5: personJson["s5"],
+    );
+  }
+  Map<String, dynamic> toJson() {
+    return {
+      "id": id,
+      "n1": n1,
+      "n2": n2,
+      "n3": n3,
+      "n4": n4,
+      "n5": n5,
+      "s1": s1,
+      "s2": s2,
+      "s3": s3,
+      "s4": s4,
+      "s5": s5,
+    };
+  }
+}
+endsnippet
+
+snippet loading
+      CancelFunc done = BotToast.showLoading();
+endsnippet
+
+snippet row
+GestureDetector(
+                    onTap: () {
+                      print("点击事件");
+                    },
+                    child: WidgetRow(
+                        color: appTheme.backGroundTop,
+                        padding: 12,
+                        height: 90,
+                        children: [
+                          // 头像
+                          Container(
+                            margin: EdgeInsets.only(
+                                top: 0.0, left: 0.0, right: 0.0, bottom: 0.0),
+                            // 内边距
+                            padding: EdgeInsets.only(
+                                top: 0.0, left: 0.0, right: 12.0, bottom: 0.0),
+                            child: Image.asset(
+                              "assets/icon/wechat.png",
+                              width: 60.0,
+                              height: 60.0,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+
+                          Expanded(
+                              child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("昵称",
+                                        textAlign: TextAlign.left,
+                                        style: appTheme.commonTextStyle16d),
+                                    Container(
+                                      margin: EdgeInsets.only(
+                                          top: 8.0,
+                                          left: 0.0,
+                                          right: 0.0,
+                                          bottom: 0.0),
+                                    ),
+                                    Text("ID:232352",
+                                        textAlign: TextAlign.left,
+                                        style: appTheme.commonTextStyle13d),
+                                  ]),
+                              flex: 1),
+                          // 右箭头
+                          Image.asset(
+                            "assets/icon/wechat.png",
+                            width: 16.0,
+                            height: 16.0,
+                            fit: BoxFit.cover,
+                          ),
+                        ]),
+                  ),
+
+endsnippet
+
+snippet t
+Text("ID:232352",
+  textAlign: TextAlign.left,
+  style: appTheme.commonTextStyle13d),
+endsnippet
+
+snippet t1
+Text("666",
+    textAlign: TextAlign.left,
+    style:
+    TextStyle(fontSize: 14, color: Glo.color("#00bc33"), //绿 00bc33 //红 e91f31 //灰 8f8f8f
+    ),
+),
+endsnippet
+
+snippet t2
+Text("666",
+    textAlign: TextAlign.left,
+    style:
+    TextStyle(fontSize: 14, color: Glo.color("#e91f31"), //绿 00bc33 //红 e91f31 //灰 8f8f8f
+    ),
+),
+endsnippet
+
+snippet t3
+Text("666",
+    textAlign: TextAlign.left,
+    style:
+    TextStyle(fontSize: 14, color: Glo.color("#8f8f8f"), //绿 00bc33 //红 e91f31 //灰 8f8f8f
+    ),
+),
+endsnippet
+
+snippet glo
+Consumer<GloModel>(
+                builder: (context, GloModel gloModel, child) {
+                  _gloModel = gloModel;
+                  return 
+                }),
+
+endsnippet
+
+snippet back
+              Navigator.pop(context, "oo");
+endsnippet
+
+snippet time
+    await new Future.delayed(new Duration(milliseconds: 100), () {});
+endsnippet
+snippet image1
+Image.asset(
+                          "assets/icon/wechat.png",
+                          width: 17.0,
+                          height: 17.0,
+                          fit: BoxFit.cover,
+                        ),
+endsnippet
+
+snippet image2
+FadeInImage.assetNetwork(
+                placeholder: 'images/wechat.png',
+                image:
+                    'https://img.alicdn.com/tfs/TB1BavQjxz1gK0jSZSgXXavwpXa-520-280.jpg_q90_.webp',
+                width: 300,
+                height: 10,
+                fit: BoxFit.cover, // fill 拉伸充满屏幕cover 保持比例，充满屏幕 fitWidth 宽度充满
+              ),
+
+endsnippet
+
+
+snippet box
+Container(
+                  // 外边距
+                  margin: EdgeInsets.only(
+                      top: 0.0, left: 0.0, right: 0.0, bottom: 0.0),
+                  // 内边距
+                  padding: EdgeInsets.only(
+                      top: 0.0, left: 0.0, right: 0.0, bottom: 0.0),
+                  decoration: BoxDecoration(
+                    // 背景
+                    color: Colors.white,
+                    // 边框和圆角
+                    //border: Border.all(width: 0, color: Glo.color("#000000")),
+                    //borderRadius: BorderRadius.all(Radius.circular(0.0)),
+                    // 边框
+                    // border: Border(
+                       //  top:
+                          //   BorderSide(width: 0.0, color: Glo.color("#e4e4e4")),
+                        // bottom: BorderSide(
+                           //  width: 0.0, color: Glo.color("#e4e4e4"))),
+                  ),
+                  constraints: BoxConstraints.tightFor(
+                      // 宽高
+                      width: double.infinity,
+                      height: 43.0),
+                  child: Text('666') 
+                ),
+
+
+endsnippet
+snippet go
+                    Navigator.pushNamed(context, "se", arguments: "Hey dy")
+                        .then((msg) {
+                      print(msg);
+                      setState(() {});
+                    });
+endsnippet
+snippet iamge1
+endsnippet
+
+
+snippet view
+
+Container(
+                  // 外边距
+                  margin: EdgeInsets.only(
+                      top: 0.0, left: 0.0, right: 0.0, bottom: 0.0),
+                  // 内边距
+                  padding: EdgeInsets.only(
+                      top: 0.0, left: 0.0, right: 0.0, bottom: 0.0),
+                  decoration: BoxDecoration(
+                    // 背景
+                    color: Colors.white,
+                    // 边框和圆角
+                    //border: Border.all(width: 0, color: Glo.color("#000000")),
+                    //borderRadius: BorderRadius.all(Radius.circular(0.0)),
+                    // 边框
+                   //  border: Border(
+                      //   top:
+                         //    BorderSide(width: 0.0, color: Glo.color("#e4e4e4")),
+                        // bottom: BorderSide(
+                          //  width: 0.0, color: Glo.color("#e4e4e4"))),
+                  ),
+                  constraints: BoxConstraints.tightFor(
+                      // 宽高
+                      width: double.infinity,
+                      height: 43.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Expanded(
+                        child: Center(child: Text("sfsdf")),
+                        flex: 0,
+                      ),
+                      Expanded(
+                        child: Container(
+                          color: Colors.black,
+                          width: 50.0,
+                        ),
+                        flex: 0,
+                      ),
+                      Expanded(
+                        child: Container(
+                          color: Colors.blue,
+                          width: 50.0,
+                        ),
+                        flex: 0,
+                      ),
+                    ],
+                  ),
+                ),
+
+
+endsnippet
+
+snippet tap
+GestureDetector(
+  onTap: () {
+  },
+  child:
+),
+endsnippet
+
+snippet span
+Text.rich(
+                                                        TextSpan(children: [
+                                                      TextSpan(
+                                                          text: "TCE 淘链股",
+                                                          style: TextStyle(
+                                                              fontSize: 14,
+                                                              color: Glo.color(
+                                                                  "#ffffff"))),
+                                                      TextSpan(
+                                                          text: "矿池",
+                                                          style: TextStyle(
+                                                              fontSize: 14,
+                                                              color: Glo.color(
+                                                                  "#fffa08"))),
+                                                    ])),
+endsnippet
+
+
+
+

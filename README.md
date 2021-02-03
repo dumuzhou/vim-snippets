@@ -1,5 +1,4 @@
-snipMate & UltiSnip Snippets
-============================
+# snipMate & UltiSnip Snippets
 
 [![Build Status](https://travis-ci.org/honza/vim-snippets.svg)](https://travis-ci.org/honza/vim-snippets)
 
@@ -8,14 +7,12 @@ This repository contains snippets files for various programming languages.
 It is community-maintained and many people have contributed snippet files and
 other improvements already.
 
-Contents
---------
+## Contents
 
 - `snippets/*`: snippets using snipMate format
 - `UltiSnips/*`: snippets using UltiSnips format
 
-Snippet engines supporting vim-snippets
-----------------------------------------
+## Snippet engines supporting vim-snippets
 
 There are different forks of snippet engines which allow the user to insert
 snippets by typing the name of a snippet hitting the expansion mapping.
@@ -24,9 +21,9 @@ snippets by typing the name of a snippet hitting the expansion mapping.
   python, supports all snippets in this repo.
 - [github.com/garbas/vim-snipmate](https://github.com/garbas/vim-snipmate):
   VimL, snipmate-snippets, engine sometimes behaves strange. Supports
-  snippets/*
+  snippets/\*
 - [github.com/Shougo/neosnippet](https://github.com/Shougo/neosnippet.vim):
-  VimL, supports snippets/* with some configuration.
+  VimL, supports snippets/\* with some configuration.
 - [github.com/drmingdrmer/xptemplate](https://github.com/drmingdrmer/xptemplate):
   Totally different syntax, does not read snippets contained in this file, but
   it is also very powerful. It does not support vim-snippets (just listing it
@@ -59,8 +56,7 @@ improved by Adnan Zafar. So maybe time is not ready to make a final decision yet
 
 [github issue/discussion](https://github.com/honza/vim-snippets/issues/363)
 
-Vendor Snippets
----------------
+## Vendor Snippets
 
 Additional library and framework snippets are available for UltiSnips users in
 the `UltiSnips/` directory. These files are removed from the default language
@@ -72,23 +68,20 @@ Additional snippets can be added to the current buffer with the
 `:UltiSnipsAddFiletypes` command followed by the snippet name without the
 "snippets" ending. For example, to add the JavaScript Jasmine snippets, run:
 `:UltiSnipsAddFiletypes javascript-jasmine`. To have this snippet loaded
-everytime a JavaScript file is opened or created you can add the command to your
- -`.vim/ftplugin/javascript.vim` file. Another way is to add
- `autocmd FileType js UltiSnipsAddFiletypes javascript-jasmine` in your `.vimrc`.
-
+everytime a JavaScript file is opened or created you can add the command to your -`.vim/ftplugin/javascript.vim` file. Another way is to add
+`autocmd FileType js UltiSnipsAddFiletypes javascript-jasmine` in your `.vimrc`.
 
 For more see the UltiSnips docs (`:help UltiSnips`).
 
-Installation
-------------
+## Installation
 
-First be aware that there are many options, see "Snippet engines" above.  Second
+First be aware that there are many options, see "Snippet engines" above. Second
 be aware than there are [tons of plugin managers][8] which is why Marc Weber
 thinks that it doesn't make sense to repeat the same repetitive information
 everywhere.
 
 The recommended way to install these snippets is by using
-[vim-addon-manager][9].  Marc Weber wrote it for exactly this reason, it
+[vim-addon-manager][9]. Marc Weber wrote it for exactly this reason, it
 supports simple dependency management. E.g. all you need is this line in your
 `.vimrc`:
 
@@ -105,13 +98,11 @@ For snipMate installation instructions, please see [snipmate@garbas][1].
 Pull requests adding installation instructions for Pathogen, Bundle, git clone,
 etc. are welcome and much appreciated.
 
-Getting help
-------------
+## Getting help
 
 If you still have trouble getting this to work, please create a GitHub issue.
 
-Things to consider when contributing
-------------------------------------
+## Things to consider when contributing
 
 Some snippets are useful for almost all languages, so let's try to have the same
 triggers for them:
@@ -131,6 +122,7 @@ if (${1:condition}){
   ${0:some code here}
 }
 ```
+
 instead use:
 
 ```
@@ -152,7 +144,7 @@ What about one line if ee then .. else .. vs if \n .. then \n ... \n else \n .. 
 Which additional policies to add?
 Discuss at: https://github.com/honza/vim-snippets/issues/230
 
-*folding markers*:
+_folding markers_:
 Until further work is done on `vim-snipmate`, please don't add folding markers
 into snippets. `vim-snipmate` has some comments about how to patch all snippets
 on the fly adding those.
@@ -160,42 +152,38 @@ on the fly adding those.
 Currently all snippets from UltiSnips have been put into UltiSnips - some work
 on merging should be done (dropping duplicates etc). Also see engines section above.
 
-Related repositories
---------------------
+## Related repositories
 
 We also encourage people to maintain sets of snippets for particular use cases
-so that all users can benefit from them.  People can list their snippet repositories here:
+so that all users can benefit from them. People can list their snippet repositories here:
 
-* https://github.com/rbonvall/snipmate-snippets-bib (snippets for BibTeX files)
-* https://github.com/sudar/vim-arduino-snippets (snippets for Arduino files)
-* https://github.com/zedr/zope-snipmate-bundle.git (snippets for Python, TAL and ZCML)
-* https://github.com/bonsaiben/bootstrap-snippets (snippets for Twitter Bootstrap markup, in HTML and Haml)
-* https://github.com/sniphpets (advanced snippets for PHP, Symfony 2/3, Doctrine and etc.)
+- https://github.com/rbonvall/snipmate-snippets-bib (snippets for BibTeX files)
+- https://github.com/sudar/vim-arduino-snippets (snippets for Arduino files)
+- https://github.com/zedr/zope-snipmate-bundle.git (snippets for Python, TAL and ZCML)
+- https://github.com/bonsaiben/bootstrap-snippets (snippets for Twitter Bootstrap markup, in HTML and Haml)
+- https://github.com/sniphpets (advanced snippets for PHP, Symfony 2/3, Doctrine and etc.)
 
 Installation using VAM: https://github.com/MarcWeber/vim-addon-manager
 
-Future ideas and examples
--------------------------
+## Future ideas and examples
 
 [overview snippet engines](http://vim-wiki.mawercer.de/wiki/topic/text-snippets-skeletons-templates.html)
 If you have ideas you can add them to that list of "snippet engine features by example".
 
-Historical notes
-----------------
+## Historical notes
 
 [vim-snipmate][1] was originally started by [Michael Sanders][2] who has now
 unfortunately abandoned the project. [Rok Garbas][3] is now maintaining a
 [fork][4] of the project in hopes of improving the existing code base.
 
-Versions / dialects / ..
-========================
+# Versions / dialects / ..
 
 There are some issues, such as newer language versions may require other
 snippets than older. If this exists we currently recommend doing this:
 
-* add snippets/ruby.snippets (common snippets)
-* add snippets/ruby-1.8.snippets (1.8 only)
-* add snippets/ruby-1.9.snippets (1.9 only)
+- add snippets/ruby.snippets (common snippets)
+- add snippets/ruby-1.8.snippets (1.8 only)
+- add snippets/ruby-1.9.snippets (1.9 only)
 
 then configure https://github.com/garbas/vim-snipmate this way:
 
@@ -218,8 +206,7 @@ migrate_lib_20_up
 
 will do it then if syntax has changed.
 
-Language maintainers
---------------------
+## Language maintainers
 
 No one can really be proficient in all programming languages. If you would like
 to maintain snippets for a language, please get in touch.
@@ -227,19 +214,18 @@ to maintain snippets for a language, please get in touch.
 Notes: People are interested in snippets - and their interest may wane again.
 This list is kept up-to-date on a best effort basis.
 
-* Elixir - [lpil](https://github.com/lpil), [iurifq](https://github.com/iurifq)
-* Falcon - [steveno](https://github.com/steveno)
-* HTML Django - [honza](http://github.com/honza)
-* Javascript - [honza](http://github.com/honza)
-* Markdown - [honza](http://github.com/honza)
-* PHP - [chrisyue](http://github.com/chrisyue)
-* Python - [honza](http://github.com/honza)
-* Ruby - [taq](http://github.com/taq)
-* Scala - [gorodinskiy](https://github.com/gorodinskiy)
-* Supercollider - [lpil](https://github.com/lpil)
+- Elixir - [lpil](https://github.com/lpil), [iurifq](https://github.com/iurifq)
+- Falcon - [steveno](https://github.com/steveno)
+- HTML Django - [honza](http://github.com/honza)
+- Javascript - [honza](http://github.com/honza)
+- Markdown - [honza](http://github.com/honza)
+- PHP - [chrisyue](http://github.com/chrisyue)
+- Python - [honza](http://github.com/honza)
+- Ruby - [taq](http://github.com/taq)
+- Scala - [gorodinskiy](https://github.com/gorodinskiy)
+- Supercollider - [lpil](https://github.com/lpil)
 
-License
--------
+## License
 
 Just as the original snipMate plugin, all the snippets are licensed under the
 terms of the MIT license.
